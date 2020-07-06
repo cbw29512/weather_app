@@ -5,7 +5,7 @@ import Weather from "./app_component/weather.component";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "weather-icons/css/weather-icons.css";
 
-const Api_Key = "429736441cf3572838aa10530929f7cd";
+const API_Key = "429736441cf3572838aa10530929f7cd";
 
 class App extends React.Component {
   constructor() {
@@ -16,6 +16,7 @@ class App extends React.Component {
       icon: undefined,
       main: undefined,
       celsius: undefined,
+      fahrenheit: undefined,
       temp_max: null,
       temp_min: null,
       description: "",
@@ -61,9 +62,14 @@ class App extends React.Component {
     }
   }
 
-  calCelsius(temp) {
-    let cell = Math.floor(temp - 273.15);
-    return cell;
+  calC(temp) {
+    let cellC = Math.floor(temp - 273.15);
+    return cellC;
+  }
+
+  calF(temp) {
+    let cellF = Math.floor(temp - 459.67);
+    return cellF;
   }
 
   getWeather = async e => {
@@ -74,18 +80,19 @@ class App extends React.Component {
 
     if (country && city) {
       const api_call = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`
+        `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_Key}`
       );
 
       const response = await api_call.json();
 
       this.setState({
         city: `${response.name}, ${response.sys.country}`,
-        country: response.sys.country,
+        // country: response.sys.country,
         main: response.weather[0].main,
-        celsius: this.calCelsius(response.main.temp),
-        temp_max: this.calCelsius(response.main.temp_max),
-        temp_min: this.calCelsius(response.main.temp_min),
+        celsius: this.calC(response.main.temp),
+        fahrenheit: this.calF(response.main.temp),
+        temp_max: this.calC(response.main.temp_max),
+        temp_min: this.calC(response.main.temp_min),
         description: response.weather[0].description,
         error: false
       });
@@ -109,6 +116,7 @@ class App extends React.Component {
           cityname={this.state.city}
           weatherIcon={this.state.icon}
           temp_celsius={this.state.celsius}
+          temp_fahrenheit={this.state.fahrenheit}
           temp_max={this.state.temp_max}
           temp_min={this.state.temp_min}
           description={this.state.description}
