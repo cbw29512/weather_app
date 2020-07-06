@@ -12,7 +12,11 @@ const Weather = props => {
 
         {/* Get Celsius */}
         {props.temp_celsius ? (
-          <h1 className="py-2">{props.temp_celsius}&deg;</h1>
+          <h1 className="py-2">{props.temp_celsius}&#8451;</h1>
+        ) : null}
+        
+        {props.temp_fahrenheit ? (
+          <h1 className="py-2">{props.temp_fahrenheit}&#8457;</h1>
         ) : null}
 
         {/* show max and min temp */}

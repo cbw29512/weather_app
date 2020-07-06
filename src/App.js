@@ -20,7 +20,7 @@ class App extends React.Component {
       temp_max: null,
       temp_min: null,
       description: "",
-      error: false
+      error: false,
     };
 
     this.weatherIcon = {
@@ -30,7 +30,7 @@ class App extends React.Component {
       Snow: "wi-snow",
       Atmosphere: "wi-fog",
       Clear: "wi-day-sunny",
-      Clouds: "wi-day-fog"
+      Clouds: "wi-day-fog",
     };
   }
 
@@ -63,12 +63,12 @@ class App extends React.Component {
   }
 
   calC(temp) {
-    let cellC = Math.floor(temp - 273.15);
+    const cellC = Math.floor(temp - 273.15);
     return cellC;
   }
 
   calF(temp) {
-    let cellF = Math.floor(temp - 459.67);
+    const cellF = Math.floor((temp - 273.15) * 9/5 + 32);
     return cellF;
   }
 
@@ -87,7 +87,7 @@ class App extends React.Component {
 
       this.setState({
         city: `${response.name}, ${response.sys.country}`,
-        // country: response.sys.country,
+        country: response.sys.country,
         main: response.weather[0].main,
         celsius: this.calC(response.main.temp),
         fahrenheit: this.calF(response.main.temp),
