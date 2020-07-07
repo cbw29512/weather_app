@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "35277c142a3f7f90d09fc7475b0a5662",
+    "revision": "8367be06e708e8a58a0d576545b1f935",
     "url": "/weather_app/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/weather_app/static/css/2.11e0aa6d.chunk.css"
   },
   {
-    "revision": "69e28c584f5654dcdf9d",
-    "url": "/weather_app/static/css/main.7dbc6e48.chunk.css"
+    "revision": "bcbd3f57f9cc561a660b",
+    "url": "/weather_app/static/css/main.596bcf76.chunk.css"
   },
   {
     "revision": "ff6eb5dfd7da79e8db50",
@@ -20,16 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/weather_app/static/js/2.4f52188f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "69e28c584f5654dcdf9d",
-    "url": "/weather_app/static/js/main.3e9a34ed.chunk.js"
+    "revision": "bcbd3f57f9cc561a660b",
+    "url": "/weather_app/static/js/main.dc220314.chunk.js"
   },
   {
     "revision": "f4a73882dead1478940d",
     "url": "/weather_app/static/js/runtime-main.b94937d0.js"
-  },
-  {
-    "revision": "e47ffc6e9d6289da77eec42a3a869e25",
-    "url": "/weather_app/static/media/space-all-universe-cosmos.e47ffc6e.jpg"
   },
   {
     "revision": "1cd48d78f06d33973d9d761d426e69bf",
