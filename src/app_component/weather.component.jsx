@@ -38,8 +38,8 @@ function maxminTemp(min, max) {
   if (max && min) {
     return (
       <h3>
-        <span className="px-4">{min}&deg;</span>
-        <span className="px-4">{max}&deg;</span>
+        <span className="px-4">{min}&#8451;</span>
+        <span className="px-4">{max}&#8451;</span>
       </h3>
     );
   }
